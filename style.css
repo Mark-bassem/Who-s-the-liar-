@@ -1,0 +1,268 @@
+* {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #ffffff;
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #00c3ff;
+      margin-top: 30px;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    #story {
+      background-color: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 12px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #f1f1f1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    #characters {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      justify-content: center;
+      gap: 1.2rem;
+      padding: 1rem;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 12px;
+      background-color: rgba(255,255,255,0.05);
+      max-width: 100%;
+      margin: 20px auto;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      padding: 20px;
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    #characters button {
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: 0.3s ease;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      cursor: pointer;
+      width: 100%;
+      max-width: 320px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #characters button:hover {
+      transform: translateY(-3px);
+      background-color: rgba(255,255,255,0.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    .results-box {
+      justify-content: center;
+      gap: 1rem;
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background-color 0.3s ease;
+      max-width: 100%;
+      font-family: 'Cairo', sans-serif;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.5;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .results-box div {
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      width: fit-content;
+      margin: 0 auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, background-color 0.3s ease
+    }
+
+    #score { background-color: #e3f2fd; color: #0d47a1; }
+    #highScore { background-color: #fff8e1; color: #f57f17; }
+    #tries { background-color: #fce4ec; color: #c2185b; }
+    #timer { background-color: #ede7f6; color: #512da8; }
+    #feedback {
+      background-color: rgba(255, 255, 255, 0.08);
+      font-size: 18px;
+      color: #fff;
+      min-height: 2rem;
+      font-weight: bold;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      text-align: center;
+      max-width: 100%;
+    }
+
+    .restart {
+      margin: 25px auto 0;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      display: block;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .restart:hover {
+      background: linear-gradient(to right, #ff4b2b, #ff416c);
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.8s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .shake {
+      animation: shake 0.4s;
+      animation-iteration-count: 3;
+      animation-timing-function: ease-in-out;
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+
+   @media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+    margin: 15px 0;
+  }
+
+  #story {
+    font-size: 1.1rem;
+    padding: 1rem;
+    line-height: 1.7;
+  }
+
+  #characters {
+    grid-template-columns: 1fr; /* كل زر في سطر لوحده */
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  #characters button {
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .results-box {
+    grid-template-columns: 1fr;
+    padding: 15px;
+    gap: 1rem;
+  }
+
+  .results-box div {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  #feedback {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .restart {
+    font-size: 1rem;
+    padding: 12px 24px;
+    margin-top: 20px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  #timer {
+    font-size: 1rem;
+  }
+}
